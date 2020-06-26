@@ -1,0 +1,12 @@
+### .babelrc vs babel.config.js
+- leslie: 问个配置问题 .babelrc和babel.config.js二选一就行是不是
+- zce: 两者有区别的
+- zce: 简单来说 .babelrc 只会影响到你自己项目中写的代码
+- zce: 而 babel.config.js 会影响整个项目中所有加载的代码
+- zce: 是不是有人要问，有啥区别？
+- jiosers: node_modules里面代码也会影响，这个意思嘛？
+- zce: 就是这个样子的,区别就是在 node_modules 中的代码会不会受其影响
+- 风华: 所以还是无脑rc好点
+- zce: 所以还是无脑 babel.config.js 好点
+- zce: 为了统一啊
+- zce: 举个例子，现在很多第三方包编译后的结果都是直接 es6 的
