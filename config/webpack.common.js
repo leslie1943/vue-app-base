@@ -130,7 +130,7 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      title: '一个用于测试的网站',
+      title: 'Webpack quick start',
       meta: {
         viewport: 'width=device-width'
       },
