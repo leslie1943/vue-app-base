@@ -3,8 +3,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CheckSensitivePlugin = require('../private-plugins/check-sensitive-plugin')
 
-// console.info("path.resolve('src') >>>>>> ", path.resolve('src'))
-
+console.info("path.resolve('src') >>>>>> ", path.resolve('src'))
+// path.resolve('../src')
 // 导出 webpack 配置对象
 module.exports = {
   mode: 'none', // 根据运行环境可被merge重写覆盖
@@ -16,6 +16,7 @@ module.exports = {
   },
   // 配置开发服务器
   devServer: {
+    port: 1943,
     /** 💛 contentBase: 为开发服务器指定查找资源目录
      * 如果引用了 配置内的 图片,文件那么项目启动后可以使用
      * 可以使用 http://locahost:8080/public.txt
@@ -41,8 +42,9 @@ module.exports = {
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
+        exclude: /node_modules/,
         enforce: 'pre', // 🔴 预处理
-        include: [path.resolve('src')],
+        include: [path.resolve('../src')],
         options: {
           // eslint-friendly-formatter指定错误报告的格式规范在控制台输出
           formatter: require('eslint-friendly-formatter')
@@ -76,6 +78,15 @@ module.exports = {
           { loader: 'style-loader' }, // step_3: create style node from js strings
           { loader: 'css-loader' }, // step_2 => translates CSS into CommonJS
           { loader: 'less-loader' } // step_1 => compiles Less to CSS
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          // 🚀 可参照 https://www.webpackjs.com/loaders/less-loader/
+          { loader: 'style-loader' }, // step_3: create style node from js strings
+          { loader: 'css-loader' }, // step_2 => translates CSS into CommonJS
+          { loader: 'sass-loader' } // step_1 => compiles Less to CSS
         ]
       },
       // ---------------------- vue file ----------------------
@@ -125,7 +136,7 @@ module.exports = {
     extensions: ['.js', '.json', '.vue'],
     alias: {
       '@': path.join(__dirname, '../src'),
-      conponents: path.join(__dirname, '../src/components'),
+      components: path.join(__dirname, '../src/components'),
       pages: path.join(__dirname, '../src/pages'),
       router: path.join(__dirname, '../src/router'),
       store: path.join(__dirname, '../src/store'),
