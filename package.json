@@ -66,12 +66,12 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn lint"
+            "pre-commit": "lint-staged"
         }
     },
     "lint-staged": {
         "*.js": [
-            "lint",
+            "eslint \"src/**/*.{js,vue,wpy}\"",
             "git add"
         ],
         "*.css": [
