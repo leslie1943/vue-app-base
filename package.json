@@ -66,18 +66,8 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "eslint --fix \"src/**/*.{js,vue,wpy}\""
+            "pre-commit": "eslint \"src/**/*.{js,vue,wpy}\""
         }
-    },
-    "lint-staged": {
-        "*.js": [
-            "eslint \"src/**/*.{js,vue,wpy}\"",
-            "git add"
-        ],
-        "*.css": [
-            "stylelint --fix",
-            "git add"
-        ]
     },
     "browserslist": [
         "> 1%",
