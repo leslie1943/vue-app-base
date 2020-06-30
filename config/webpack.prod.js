@@ -5,12 +5,12 @@ const webpack = require('webpack')
 const prodConfig = require('../env/prod')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserWebpackPlugin = require('terser-webpack-plugin')
+// const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
+// const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
-  devtool: 'nosources-source-map',
+  // devtool: 'nosources-source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -23,13 +23,14 @@ module.exports = merge(common, {
     }),
     new webpack.DefinePlugin({
       'process.env': prodConfig,
-      BASE_URL: prodConfig.BASE_URL
+      BASE_URL: prodConfig.BASE_URL,
+      BASE_PUBLIC_URL: prodConfig.BASE_PUBLIC_URL
     })
   ],
   optimization: {
     minimizer: [
-      new OptimizeCssAssetsWebpackPlugin(),
-      new TerserWebpackPlugin()
+      // new OptimizeCssAssetsWebpackPlugin()
+      // new TerserWebpackPlugin()
     ]
   }
 })

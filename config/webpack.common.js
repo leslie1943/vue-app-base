@@ -3,7 +3,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CheckSensitivePlugin = require('../private-plugins/check-sensitive-plugin')
-// const ipConfig = require('../env/ip')
+const ipConfig = require('../env/ip')
+console.info(ipConfig)
 
 console.info("path.resolve('src') >>>>>> ", path.resolve('src'))
 // path.resolve('../src')
@@ -16,6 +17,8 @@ module.exports = {
     filename: '[name]-[hash].bundle.js',
     path: path.join(__dirname, '../dist')
   },
+  // assetsSubDirectory: 'public',
+  // assetsPublicPath: '/',
   // 配置开发服务器
   devServer: {
     // open: true,

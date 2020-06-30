@@ -14,10 +14,10 @@ export default [
     component: $import('200')
   },
   {
-    path: '/404',
+    path: '*',
     name: '404',
     hidden: true,
-    component: $import('404')
+    component: $import('status/404')
   },
   {
     path: '/500',

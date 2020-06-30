@@ -9,7 +9,8 @@ module.exports = merge(common, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': devEnv,
-      BASE_URL: devEnv.BASE_URL
+      BASE_URL: devEnv.BASE_URL,
+      BASE_PUBLIC_URL: devEnv.BASE_URL
     })
   ]
 })

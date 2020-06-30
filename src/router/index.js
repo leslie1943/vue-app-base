@@ -6,7 +6,8 @@ import businessRoutes from './modules/business'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'hash',
+  // mode: 'hash',
+  mode: 'history',
   scrollBehavior: () => ({
     y: 0
   }),
@@ -15,6 +16,10 @@ const router = new Router({
     ...businessRoutes
   ]
 })
+
+// router.beforeEach((to, from, next) => {
+
+// })
 
 export const allRoutes = [
   ...staticRoutes,
