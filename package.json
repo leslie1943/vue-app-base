@@ -74,6 +74,9 @@
     "lint-staged": {
         "*.{js,vue}": [
             "eslint"
+        ],
+        "*.{css,scss,less}": [
+            "stylelint"
         ]
     },
     "browserslist": [
