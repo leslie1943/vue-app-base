@@ -71,7 +71,7 @@
     },
     "lint-staged": {
         "*.js": [
-            "eslint",
+            "lint",
             "git add"
         ],
         "*.css": [
