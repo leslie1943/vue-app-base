@@ -1,7 +1,9 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CheckSensitivePlugin = require('../private-plugins/check-sensitive-plugin')
+// const ipConfig = require('../env/ip')
 
 console.info("path.resolve('src') >>>>>> ", path.resolve('src'))
 // path.resolve('../src')
@@ -16,6 +18,10 @@ module.exports = {
   },
   // 配置开发服务器
   devServer: {
+    // open: true,
+    open: 'http://localhost:1943',
+    // host: ipConfig.getIp(),
+    host: '0.0.0.0',
     port: 1943,
     /** 💛 contentBase: 为开发服务器指定查找资源目录
      * 如果引用了 配置内的 图片,文件那么项目启动后可以使用
@@ -33,7 +39,8 @@ module.exports = {
       }
     },
     // hot: true, // 如果热替换失败就自动刷新
-    hotOnly: true // 不会自动刷新
+    hotOnly: true, // 不会自动刷新
+    quiet: true
   },
   // 配置loader
   module: {
@@ -123,13 +130,20 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Webpack quick start',
+      title: '一个用于测试的网站',
       meta: {
         viewport: 'width=device-width'
       },
       template: './public/index.html'
+    }),
+    new FriendlyErrorsPlugin({
+      compilationSuccessInfo: {
+        messages: [
+          'Your application is running at: http://localhost:1943',
+          'Enjoy your fantasy journey ❗❗❗'
+        ]
+      }
     })
-
   ],
   // ----------------------------- 寻找模块对应的文件 -----------------------------
   resolve: {

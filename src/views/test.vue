@@ -6,6 +6,7 @@
       <el-button @click="handleToHome">To home</el-button>
       <el-button @click="handleToIndex">To inner</el-button>
       <el-button @click="handleToUserDetail">To User detail</el-button>
+      <el-button @click="handleToBlue">To blue</el-button>
     </div>
   </div>
 </template>
@@ -26,6 +27,9 @@ export default {
     },
     handleToUserDetail() {
       this.$router.push('/user/detail/1357')
+    },
+    handleToBlue() {
+      this.$router.push('/blue')
     }
   }
 }

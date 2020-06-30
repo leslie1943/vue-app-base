@@ -7,8 +7,9 @@ import './style.less'
 // import { HappyScroll } from 'vue-happy-scroll'
 // import 'vue-happy-scroll/docs/happy-scroll.css'
 import router from './router'
-// const fff = router
-// const ggggg = router
+// const huskyTa = router
+// const huskyTb = router
+// const huskyTc = router
 
 Vue.config.productionTip = false
 
