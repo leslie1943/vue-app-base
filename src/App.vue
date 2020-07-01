@@ -31,10 +31,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  /* margin-top: 20px; */
-  /* margin-top: 2px; */
-  margin-top: 0px;
+  margin-bottom: 10px;
+  overflow-x: hidden;
 }
 </style>

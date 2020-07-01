@@ -4,6 +4,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'normalize.css/normalize.css'
 import './style.less'
+import axios from 'axios'
 // import { HappyScroll } from 'vue-happy-scroll'
 // import 'vue-happy-scroll/docs/happy-scroll.css'
 import router from './router'
@@ -16,6 +17,8 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 // Vue.component('happy-scroll', HappyScroll)
 // Vue.use(router)
+Vue.prototype.$http = axios
+Vue.prototype.baseURL = process.env.BASE_API_URL
 
 const $vue = new Vue({
   render: h => h(App),

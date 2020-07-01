@@ -17,8 +17,6 @@ module.exports = {
     filename: '[name]-[hash].bundle.js',
     path: path.join(__dirname, '../dist')
   },
-  // assetsSubDirectory: 'public',
-  // assetsPublicPath: '/',
   // 配置开发服务器
   devServer: {
     // open: true,
@@ -28,8 +26,8 @@ module.exports = {
     port: 1943,
     /** 💛 contentBase: 为开发服务器指定查找资源目录
      * 如果引用了 配置内的 图片,文件那么项目启动后可以使用
-     * 可以使用 http://locahost:8080/public.txt
-     * 可以使用 http://locahost:8080/favicon.ico 查看是否可以访问到相关的资源
+     * 可以使用 http://localhost:1943/public.txt
+     * 可以使用 http://localhost:1943/favicon.ico 查看是否可以访问到相关的资源
      */
     contentBase: ['./public'],
     proxy: {
@@ -107,7 +105,7 @@ module.exports = {
       },
       // ---------------------- image file ----------------------
       {
-        test: /\.(png|jpg|jpeg|gif|ttf|woff)$/,
+        test: /\.(png|jpg|jpeg|gif|ico|svg|ttf|woff)$/,
         use: [
           {
             loader: 'url-loader',
@@ -133,7 +131,7 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Webpack quick start',
+      title: 'You\'ll Never Walk Alone',
       meta: {
         viewport: 'width=device-width'
       },
@@ -159,7 +157,8 @@ module.exports = {
       store: path.join(__dirname, '../src/store'),
       utils: path.join(__dirname, '../src/utils'),
       layout: path.join(__dirname, '../src/layout'),
-      static: path.join(__dirname, '../static')
+      static: path.join(__dirname, '../static'),
+      public: path.join(__dirname, '../public')
     }
   },
   performance: {

@@ -1,5 +1,6 @@
 <template>
-  <div style="padding:20px;">
+  <div style="padding:10px;">
+    <el-button type="success" style="margin:10px;" @click="getData">Get Data from Github</el-button>
     <el-table :data="tableData" v-loading="loading">
       <el-table-column prop="id" label="id"></el-table-column>
       <el-table-column prop="avatar_url" label="avatar">
@@ -23,15 +24,20 @@ export default {
       loading: false
     }
   },
-  mounted() {
-    $vue.$message.success('在 eslintrc.js 里配置了 globals: $vue')
-    this.loading = true
-    fetch('/api/users')
-      .then(res => res.json())
-      .then(data => {
-        this.tableData = data ? data.slice(0, 5) : []
+  methods: {
+    getData() {
+      // $vue.$message.success('在 eslintrc.js 里配置了 globals: $vue')
+      this.loading = true
+      this.$http({
+        method: 'get',
+        url: `${this.baseURL}/users`
+      }).then(res => {
+        this.tableData = res.data ? res.data.slice(0, 20) : []
         this.loading = false
       })
+    }
+  },
+  mounted() {
   }
 }
 </script>
