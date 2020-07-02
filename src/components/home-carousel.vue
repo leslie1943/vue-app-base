@@ -75,8 +75,8 @@
             <h2 style="color:#f56c6c">官方夺冠视频</h2>
           </el-row>
 
-          <div style="height:1px;border-top:1px solid #f56c6c;"></div>
-          <div style="padding:10px;">
+          <!-- <div style="height:1px;border-top:1px solid #f56c6c;"></div> -->
+          <div style="padding:10px;background-color:#000">
             <video-player
               class="video-player vjs-custom-skin"
               ref="videoPlayer"
