@@ -83,9 +83,6 @@
               :options="playerOptions"
             ></video-player>
           </div>
-          <div style="text-align:right;">
-            <el-button style="width:240px;background-color:#f56c6c;color:#FFF">Keep Red..</el-button>
-          </div>
         </el-col>
       </el-row>
     </div>
