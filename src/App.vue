@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <img :src="logo" /> -->
-    <router-link to="/">Home</router-link>
-    <router-link to="/test">Test</router-link>
+    <!-- <router-link to="/">Home</router-link>
+    <router-link to="/test">Test</router-link>-->
     <router-view key="key"></router-view>
   </div>
 </template>

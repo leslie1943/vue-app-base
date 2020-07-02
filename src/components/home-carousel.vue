@@ -1,7 +1,7 @@
 <template>
   <div class="home-main-content">
     <!-- Header -->
-    <!-- <div
+    <div
       class="top-header"
       :style="{'box-shadow': scrollHeight > 0 ? '0 0 5px #888':'0 0 5px #888'}"
     >
@@ -17,9 +17,9 @@
       <div class="right">
         <span>ABOUT US</span>
       </div>
-    </div>-->
+    </div>
     <!-- main section -->
-    <!-- <div class="slogan-outter-container">
+    <div class="slogan-outter-container">
       <el-row>
         <el-col :span="6">
           <div class="slogan-container">
@@ -43,7 +43,7 @@
           </div>
         </el-col>
       </el-row>
-    </div>-->
+    </div>
     <!-- team-intro -->
     <div class="team-intro"></div>
   </div>
@@ -134,7 +134,9 @@ export default {
       align-items: center;
       justify-content: center;
       .slogan-badge {
-        width: 80%;
+        // width: 80%;
+        margin-top: 50px;
+        height: 200px;
       }
     }
     .slogan-words {
