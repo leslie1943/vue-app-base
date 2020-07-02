@@ -18,6 +18,9 @@
         <span>ABOUT US</span>
       </div>
     </div>
+    <!-- <div style>
+      <video-player class="video-player-box" ref="videoPlayer" :options="playerOptions"></video-player>
+    </div>-->
     <!-- main section -->
     <div class="slogan-outter-container">
       <el-row>
@@ -69,22 +72,16 @@
         </el-col>
         <el-col :span="12">
           <el-row>
-            <h2 style="color:#f56c6c">夺冠视频</h2>
+            <h2 style="color:#f56c6c">官方夺冠视频</h2>
           </el-row>
+
           <div style="height:1px;border-top:1px solid #f56c6c;"></div>
-          <el-row>
-            <ul>
-              <li class="message">利物浦是英格兰足球历史上最成功的俱乐部之一,也是欧洲乃至世界最成功的足球俱乐部之一.</li>
-              <li
-                class="message"
-              >利物浦一共夺取过19次英格兰顶级联赛冠军、7次英格兰足总杯冠军、8次英格兰联赛杯冠军、15次英格兰社区盾杯冠军、6次欧洲冠军联赛冠军、3次欧洲联盟杯冠军、4次欧洲超级杯冠军以及1次国际足联俱乐部世界杯冠军,也曾为已解散的G14创立成员.</li>
-              <li class="message">2018/19赛季,利物浦2比0战胜热刺,历史上第六次捧起欧洲冠军联赛冠军奖杯,这也是红军时隔十四年在这项赛事中的王者归来.</li>
-              <li class="message">2019年12月,利物浦1比0击败弗拉门戈首夺世俱杯冠军.</li>
-              <li class="message">2020年6月26日,在2019-2020赛季英格兰足球超级联赛中,利物浦队获得冠军.</li>
-            </ul>
-          </el-row>
-          <div style="text-align:right;">
-            <el-button style="width:240px;background-color:#f56c6c;color:#FFF">前往官方网站</el-button>
+          <div style="padding:10px;">
+            <video-player
+              class="video-player vjs-custom-skin"
+              ref="videoPlayer"
+              :options="playerOptions"
+            ></video-player>
           </div>
         </el-col>
       </el-row>
@@ -94,21 +91,51 @@
 
 <script>
 import badge from '../../static/images/badge.svg'
+import poster from '../../static/images/1.jpg'
+import 'video.js/dist/video-js.css'
+import 'vue-video-player/src/custom-theme.css'
+import { videoPlayer } from 'vue-video-player'
+
 export default {
   name: 'home-carousel',
+  components: { videoPlayer },
   data() {
     return {
       badge: badge,
-      scrollHeight: 0
+      scrollHeight: 0,
+      playerOptions: {
+        // videojs options
+        muted: false,
+        height: 300,
+        width: '800',
+        language: 'en',
+        autoplay: true,
+        controls: true,
+        playbackRates: [0.7, 1.0, 1.5, 2.0],
+        sources: [{
+          type: 'video/mp4',
+          src: 'http://mpvideo.qpic.cn/0bf2laaacaaae4al67huh5pfawgdafmaaaia.f10002.mp4?dis_k=ce1b47206a36b730b64df6df8bef240e&dis_t=1593677467'
+        }],
+        // poster: 'http://pic1.win4000.com/wallpaper/d/53a2b11d2f899.jpg'
+        poster: poster
+      }
     }
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, true)
+    console.info('player', this.player)
+    this.player.bigPlayButton.enabled_ = false
+  },
+  computed: {
+    player() {
+      return this.$refs.videoPlayer.player
+    }
   },
   methods: {
     handleScroll() {
       this.scrollHeight = document.documentElement.scrollTop
     }
+
   }
 }
 </script>
@@ -177,7 +204,8 @@ export default {
       align-items: center;
       justify-content: center;
       .slogan-badge {
-        width: 80%;
+        margin-top: 50px;
+        height: 300px;
       }
     }
     .slogan-words {
