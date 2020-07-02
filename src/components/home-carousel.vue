@@ -91,6 +91,7 @@
 
 <script>
 import badge from '../../static/images/badge.svg'
+import poster from '../../static/images/1.jpg'
 import 'video.js/dist/video-js.css'
 import 'vue-video-player/src/custom-theme.css'
 import { videoPlayer } from 'vue-video-player'
@@ -115,7 +116,8 @@ export default {
           type: 'video/mp4',
           src: 'http://mpvideo.qpic.cn/0bf2laaacaaae4al67huh5pfawgdafmaaaia.f10002.mp4?dis_k=ce1b47206a36b730b64df6df8bef240e&dis_t=1593677467'
         }],
-        poster: 'http://pic1.win4000.com/wallpaper/d/53a2b11d2f899.jpg'
+        // poster: 'http://pic1.win4000.com/wallpaper/d/53a2b11d2f899.jpg'
+        poster: poster
       }
     }
   },
