@@ -1,7 +1,7 @@
 <template>
   <div class="home-main-content">
     <!-- Header -->
-    <div
+    <!-- <div
       class="top-header"
       :style="{'box-shadow': scrollHeight > 0 ? '0 0 5px #888':'0 0 5px #888'}"
     >
@@ -17,9 +17,9 @@
       <div class="right">
         <span>ABOUT US</span>
       </div>
-    </div>
+    </div>-->
     <!-- main section -->
-    <div class="slogan-outter-container">
+    <!-- <div class="slogan-outter-container">
       <el-row>
         <el-col :span="6">
           <div class="slogan-container">
@@ -43,52 +43,9 @@
           </div>
         </el-col>
       </el-row>
-    </div>
+    </div>-->
     <!-- team-intro -->
-    <div class="team-intro">
-      <el-row :gutter="10">
-        <el-col :span="12">
-          <el-row>
-            <h2 style="color:#f56c6c">球队历史及主要荣誉</h2>
-          </el-row>
-          <div style="height:1px;border-top:1px solid #f56c6c;"></div>
-          <el-row>
-            <ul>
-              <li class="message">利物浦是英格兰足球历史上最成功的俱乐部之一,也是欧洲乃至世界最成功的足球俱乐部之一.</li>
-              <li
-                class="message"
-              >利物浦一共夺取过19次英格兰顶级联赛冠军、7次英格兰足总杯冠军、8次英格兰联赛杯冠军、15次英格兰社区盾杯冠军、6次欧洲冠军联赛冠军、3次欧洲联盟杯冠军、4次欧洲超级杯冠军以及1次国际足联俱乐部世界杯冠军,也曾为已解散的G14创立成员.</li>
-              <li class="message">2018/19赛季,利物浦2比0战胜热刺,历史上第六次捧起欧洲冠军联赛冠军奖杯,这也是红军时隔十四年在这项赛事中的王者归来.</li>
-              <li class="message">2019年12月,利物浦1比0击败弗拉门戈首夺世俱杯冠军.</li>
-              <li class="message">2020年6月26日,在2019-2020赛季英格兰足球超级联赛中,利物浦队获得冠军.</li>
-            </ul>
-          </el-row>
-          <div style="text-align:left;">
-            <el-button style="width:240px;background-color:#f56c6c;color:#FFF">Keep Red..</el-button>
-          </div>
-        </el-col>
-        <el-col :span="12">
-          <el-row>
-            <h2 style="color:#f56c6c">夺冠视频</h2>
-          </el-row>
-          <div style="height:1px;border-top:1px solid #f56c6c;"></div>
-          <el-row>
-            <ul>
-              <li class="message">利物浦是英格兰足球历史上最成功的俱乐部之一,也是欧洲乃至世界最成功的足球俱乐部之一.</li>
-              <li
-                class="message"
-              >利物浦一共夺取过19次英格兰顶级联赛冠军、7次英格兰足总杯冠军、8次英格兰联赛杯冠军、15次英格兰社区盾杯冠军、6次欧洲冠军联赛冠军、3次欧洲联盟杯冠军、4次欧洲超级杯冠军以及1次国际足联俱乐部世界杯冠军,也曾为已解散的G14创立成员.</li>
-              <li class="message">2018/19赛季,利物浦2比0战胜热刺,历史上第六次捧起欧洲冠军联赛冠军奖杯,这也是红军时隔十四年在这项赛事中的王者归来.</li>
-              <li class="message">2019年12月,利物浦1比0击败弗拉门戈首夺世俱杯冠军.</li>
-              <li class="message">2020年6月26日,在2019-2020赛季英格兰足球超级联赛中,利物浦队获得冠军.</li>
-            </ul>
-          </el-row>
-          <div style="text-align:right;">
-            <el-button style="width:240px;background-color:#f56c6c;color:#FFF">前往官方网站</el-button>
-          </div>
-        </el-col>
-      </el-row>
-    </div>
+    <div class="team-intro"></div>
   </div>
 </template>
 

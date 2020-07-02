@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <!-- <img :src="logo" /> -->
+    <router-link to="/">Home</router-link>
+    <router-link to="/test">Test</router-link>
     <router-view key="key"></router-view>
   </div>
 </template>
@@ -34,5 +36,6 @@ export default {
   color: #2c3e50;
   margin-bottom: 10px;
   overflow-x: hidden;
+  text-align: center;
 }
 </style>

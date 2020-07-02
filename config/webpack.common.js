@@ -150,6 +150,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.vue'],
     alias: {
+      // vue$: 'vue/dist/vue.esm.js', // 解决 runtime时template 的问题
       '@': path.join(__dirname, '../src'),
       components: path.join(__dirname, '../src/components'),
       pages: path.join(__dirname, '../src/pages'),

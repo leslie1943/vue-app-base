@@ -5,8 +5,8 @@
     <!-- <hello-world msg="Welcome to Your Vue.js App" /> -->
     <!-- <home-list></home-list> -->
     <div>
-      <!-- <el-button type="primary" @click="handleTestLoader">Test custom loader</el-button>
-      <el-button type="primary" @click="handleToOther">随便看看</el-button>-->
+      <el-button type="primary" @click="handleTestLoader">Test custom loader</el-button>
+      <el-button type="primary" @click="handleToOther">随便看看</el-button>
     </div>
   </div>
 </template>
