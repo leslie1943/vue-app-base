@@ -105,7 +105,7 @@ module.exports = {
       },
       // ---------------------- image file ----------------------
       {
-        test: /\.(png|jpg|jpeg|gif|ico|svg|ttf|eot|woff)$/,
+        test: /\.(png|jpg|jpeg|gif|ico|svg|ttf|eot|woff|mp4)$/,
         use: [
           {
             loader: 'url-loader',
