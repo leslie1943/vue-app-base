@@ -68,7 +68,7 @@
             </ul>
           </el-row>
           <div style="text-align:left;">
-            <el-button style="width:240px;background-color:#f56c6c;color:#FFF">Keep Red..</el-button>
+            <el-button class="main-button-red">Keep Red..</el-button>
           </div>
         </el-col>
         <el-col :span="12">
@@ -104,19 +104,12 @@
         <div
           style="font-size:16px;"
         >1989年4月15日,在英国谢菲尔德市希尔斯堡体育场举行的利物浦队对阵诺丁汉森林队的足总杯半决赛中,由于球场结构问题和组织秩序混乱,在比赛开始后尚有5000名利物浦球迷未能入场,警官开启了大门却没有给予必要的引导,致使5000人涌向同一看台,拥挤造成了严重的踩踏伤亡,96人丧生,200多人受伤。因在场警官的谎言、媒体的恶意报道与政府的失公处理,迄今还没有人为希尔斯堡惨案负起应有的责任。2011年10月17日,英政府表示公开此事的全部绝密文件,继续调查。北京时间2012年9月12日,调查结果正式出炉,惨案真相大白,球迷冤情得雪。2016年4月26日,英国高等法院陪审团裁定,踩踏事故发生的原因是南约克郡警方玩忽职守,现场的组织、管理和控制不力,最终导致人群失控,相互踩踏酿成惨剧,当年遇难的96名球迷是被“非法致死”</div>
-
-        <el-row style="padding:10px;border:1px solid #f56c6c;border-bottom:0px;">
-          <el-col :span="6" v-for="(item,index) in victimFirstHalfList" :key="index">
-            <span class="victim-name-red">{{item.name + '(' + item.age + ')'}}</span>
-          </el-col>
-        </el-row>
-        <el-row style="padding:10px;border:1px solid teal;border-top:0px;">
-          <el-col :span="6" v-for="(item,index) in victimSecondHalfList" :key="index">
-            <span class="victim-name-teal">{{item.name + '(' + item.age + ')'}}</span>
-          </el-col>
-        </el-row>
+        <div style="text-align:right;">
+          <el-button class="main-button-teal" @click="handleViewVictims">Memorize the victims</el-button>
+        </div>
       </div>
     </div>
+    <dialog-vicims :visible.sync="visible"></dialog-vicims>
   </div>
 </template>
 
@@ -124,22 +117,17 @@
 import badge from 'static/images/badge.svg'
 import poster from 'static/images/poster.jpg'
 import video from 'static/videos/liverpool-champion.mp4'
-// import hillsborough from 'static/images/hillsborough.jpg'
-import { victimFirstHalf, victimSecondHalf } from '../data/hillsborough-victims'
 import 'video.js/dist/video-js.css'
 import 'vue-video-player/src/custom-theme.css'
 import { videoPlayer } from 'vue-video-player'
-
+import DialogVicims from './dialog-victims'
 export default {
   name: 'home-carousel',
-  components: { videoPlayer },
+  components: { videoPlayer, DialogVicims },
   data() {
     return {
+      visible: false,
       badge: badge,
-      victimFirstHalfList: victimFirstHalf,
-      victimSecondHalfList: victimSecondHalf,
-      // victimSList:[...victimFirstHalf,...victimSecondHalf],
-      // hillsborough: hillsborough,
       scrollHeight: 0,
       playerOptions: {
         muted: false,
@@ -169,14 +157,26 @@ export default {
   methods: {
     handleScroll() {
       this.scrollHeight = document.documentElement.scrollTop
+    },
+    handleViewVictims() {
+      this.visible = true
     }
-
   }
 }
 </script>
 
 <style lang="scss">
 .home-main-content {
+  .main-button-red {
+    width: 240px;
+    background-color: #f56c6c;
+    color: #fff;
+  }
+  .main-button-teal {
+    width: 240px;
+    background-color: teal;
+    color: #fff;
+  }
   .top-header {
     position: fixed;
     box-sizing: border-box;
@@ -188,7 +188,7 @@ export default {
     z-index: 1000;
     .left {
       width: 20%;
-      // height: 50px;
+      height: 50px;
       background-color: #f56c6c;
       line-height: 50px;
       color: #fff;
@@ -289,12 +289,6 @@ export default {
     padding: 10px;
     text-align: left;
     line-height: 24px;
-    .victim-name-red {
-      color: #f56c6c;
-    }
-    .victim-name-teal {
-      color: teal;
-    }
   }
 }
 </style>
