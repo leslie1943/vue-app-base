@@ -5,6 +5,7 @@
       title="The victims in Hillsborough"
       :show-close="true"
       width="75%"
+      top="1vh"
       :visible="xVisible"
       @close="handleClose"
     >
