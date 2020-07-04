@@ -2,14 +2,14 @@
   <div class="dialog-victims-container">
     <el-dialog
       center
-      title="The victims in Hillsborough"
+      title="The victims in Hillsborough Disaster"
       :show-close="true"
       width="75%"
       top="1vh"
       :visible="xVisible"
       @close="handleClose"
     >
-      <div style="background-color:#303133;line-height:24px;">
+      <div style="background-color:#303133;line-height:24px;max-height:500px;overflow-y:scroll;">
         <el-row style="padding:10px;border:1px solid #f56c6c;border-bottom:0px;">
           <el-col :span="6" v-for="(item,index) in victimFirstHalfList" :key="index">
             <span class="victim-name-red">{{item.name + '(' + item.age + ')'}}</span>
@@ -64,9 +64,13 @@ export default {
   }
   .victim-name-red:hover {
     color: #fff;
+    font-weight: 600;
+    cursor: pointer;
   }
   .victim-name-teal:hover {
     color: #fff;
+    font-weight: 600;
+    cursor: pointer;
   }
 }
 </style>
