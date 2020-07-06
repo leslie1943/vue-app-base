@@ -29,7 +29,7 @@ export default class VueRouter {
     })
   }
 
-  // ----------------------------------- ❗ constructor section -----------------------------------
+  // ----------------------------------- ❗ constructor section  -----------------------------------
   constructor(options) {
     this.options = options
     this.routeMap = {} // 键值对对象 路由: 组件
