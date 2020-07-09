@@ -38,7 +38,8 @@ module.exports = {
     },
     rules: {
         indent: ['off', 2],
-        'space-before-function-paren': 'off'
+        'space-before-function-paren': 'off',
+        'no-debugger': 'off'
     },
     plugins: [
         /**

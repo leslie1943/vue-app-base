@@ -12,11 +12,12 @@ import router from './router'
 // const huskyTb = router
 // const huskyTc = router
 
+console.info('process.env', process.env)
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 // Vue.component('happy-scroll', HappyScroll)
-// Vue.use(router)
+Vue.use(router)
 Vue.prototype.$http = axios
 Vue.prototype.baseURL = process.env.BASE_API_URL
 

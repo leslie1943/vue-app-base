@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!-- dev:  http://localhost:1943/public/ -->
-    <!-- prod: http://localhost:3309/public/ -->
     <link rel="icon" href="<%= BASE_PUBLIC_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
@@ -15,6 +13,9 @@
     <noscript>
         <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <div>NODE_ENV: <%= process.env.NODE_ENV %></div>
+    <div>BASE_API_URL: <%= process.env.BASE_API_URL %></div>
+    <div>BASE_URL: <%= process.env.BASE_URL %></div>
     <div id="app"></div>
     <!-- built files will be auto injected -->
 </body>

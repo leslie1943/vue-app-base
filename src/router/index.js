@@ -1,6 +1,8 @@
 import Vue from 'vue'
 // import Router from 'vue-router'
-import Router from '../vuerouter'
+// import Router from '../vuerouter'
+import Router from '../vuerouterhash'
+
 import staticRoutes from './modules/constant'
 // import businessRoutes from './modules/business'
 
